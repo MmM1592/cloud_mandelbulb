@@ -43,5 +43,5 @@ def generate_mandelbulb(dim, power, iterations, threshold=2.0):
             mask_inside = (r <= threshold)
             mandelbulb_points.append(grid_points[mask_inside])  #Add point
     
-    mandelbulb_points = torch.cat(mandelbulb_points, dim=0).cpu()  #Convert to CPU tensor
+    mandelbulb_points = torch.cat(mandelbulb_points, dim=0).cpu()  #Convert to CPU tensor ([C,D]) C is count of points and D is the number of plot dimensions
     return mandelbulb_points
